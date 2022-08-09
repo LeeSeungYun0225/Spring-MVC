@@ -12,12 +12,14 @@ public class DetailController implements Controller{
 		// TODO Auto-generated method stub
 		
 
-		ModelAndView mv = new ModelAndView("notice/detail");
+		ModelAndView mv = new ModelAndView("notice.detail");
 		
 		Detail dt = new Detail("제목입니다","2022-08-08","Lee",10,"","테스트 게시글");
 		
 		mv.addObject("data",dt);	
 		return mv;
+		
+		
 	}
 	
 	

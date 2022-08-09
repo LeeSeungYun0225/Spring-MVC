@@ -13,7 +13,7 @@ public class ListController implements Controller{
 		// TODO Auto-generated method stub
 		
 
-		ModelAndView mv = new ModelAndView("notice/list");
+		ModelAndView mv = new ModelAndView("notice.list");
 		
 		
 		return mv;
