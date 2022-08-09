@@ -13,10 +13,10 @@ public class IndexController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		// TODO Auto-generated method stub
 	
-		ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView("root.index");
 		mv.addObject("data","HelloSpringMvc~"); //뷰 페이지에 전달할 모델 추가 
 		 
-		mv.setViewName("index"); //뷰 페이지 요청 
+	
 		//WEB-INF/view/index.jsp >> 상대주소 :: 이 url과 같은 경로에 있다고 생각하고 탐색 
 		
 		
