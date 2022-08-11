@@ -51,13 +51,8 @@ public class JDBCNoticeService implements NoticeService {
 		
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
-			 
-			 
+			 Connection con = Dbconstants.datasource.getConnection();
+				 
 			 
 			 Statement statement = con.createStatement();
 			 deleted = statement.executeUpdate(sql);
@@ -72,7 +67,7 @@ public class JDBCNoticeService implements NoticeService {
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -113,11 +108,7 @@ public class JDBCNoticeService implements NoticeService {
 		Statement statement_C = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 con = DriverManager.getConnection(url,adminId,adminPass);
+			 con = Dbconstants.datasource.getConnection();
 			 
 			 con.setAutoCommit(false); // 오토 커밋을 false로 설정 
 			 
@@ -132,7 +123,7 @@ public class JDBCNoticeService implements NoticeService {
 			 
 			 con.commit(); // 모든 쿼리가 실행 완료되었을 시점에 커밋 수행 
 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			if(con!= null)// 예외 발생시 커넥션이 열려있으면 
 			{
@@ -182,12 +173,7 @@ public class JDBCNoticeService implements NoticeService {
 		int result = 0;
 		
 		try {
-			 Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
-			 
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 PreparedStatement statement = con.prepareStatement(sql);
@@ -209,7 +195,7 @@ public class JDBCNoticeService implements NoticeService {
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -228,11 +214,7 @@ public class JDBCNoticeService implements NoticeService {
 		
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 
@@ -250,7 +232,7 @@ public class JDBCNoticeService implements NoticeService {
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -332,11 +314,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 	
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 
@@ -379,7 +357,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -405,11 +383,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 	
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 
@@ -451,7 +425,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch ( SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -480,11 +454,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 				
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 
@@ -508,7 +478,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch ( SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -526,12 +496,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 		String sql = "SELECT * FROM NOTICE WHERE ID=?";
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
-			 
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 PreparedStatement statement = con.prepareStatement(sql);
@@ -560,7 +525,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -584,11 +549,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 	
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 
@@ -613,7 +574,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -637,11 +598,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 				+ "ORDER BY REGDATE ASC LIMIT 1";
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			 String url  = Dbconstants.Db_address;
-			 String adminId = Dbconstants.Db_id;
-			 String adminPass = Dbconstants.Db_pass;
-			 Connection con = DriverManager.getConnection(url,adminId,adminPass);
+			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
 			 
@@ -666,7 +623,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

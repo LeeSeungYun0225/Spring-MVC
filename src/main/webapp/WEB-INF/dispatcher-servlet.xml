@@ -9,6 +9,20 @@
         https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
+
+	<!-- DATABASE 연결 변수 클래스 설정  -->
+	<bean id="dbConstants" class="com.newlecture.web.constants.Dbconstants">
+		<property name="Datasource" ref="dbSource" ></property>
+	</bean>
+
+	
+	<bean id="dbSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+		<property name="url" value="jdbc:mysql://localhost:3306/servlet?useSSL=false"></property>
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="!Ekdma0607"></property>
+	</bean>
+
 	<!-- id에는 url을 지정, class는 실제 호출될 클래스 -->
     <bean id="/index" class="com.newlecture.web.controller.IndexController">  </bean>
 	

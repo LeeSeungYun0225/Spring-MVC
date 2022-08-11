@@ -1,7 +1,15 @@
 package com.newlecture.web.constants;
 
+import javax.sql.DataSource;
+
 public class Dbconstants {
-	public static final String Db_address = "jdbc:mysql://localhost:3306/servlet?useSSL=false&allowPublicKeyRetrieval=true";
-	public static final String Db_id =  "root";
-	public static final String Db_pass = "!Ekdma0607";
+
+	public static DataSource datasource;
+
+	public void setDatasource(DataSource datasource) {
+		this.datasource = datasource;
+		
+	}
+	
+	
 }
