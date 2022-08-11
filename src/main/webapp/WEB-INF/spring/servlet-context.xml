@@ -2,22 +2,27 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc
-        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
 
-
+	<!-- 어노테이션 사용을 위한 config -->
+	<context:annotation-config/>
+	
 <!-- id에는 url을 지정, class는 실제 호출될 클래스 -->
     <bean id="/index" class="com.newlecture.web.controller.IndexController">  </bean>
 	
 	<bean id="/notice/list" class = "com.newlecture.web.controller.notice.ListController">
 	
 	
-		<property name="noticeService" ref = "noticeService">
+<!--  		<property name="noticeService" ref = "noticeService"/>  -->
 			
-		</property>
+
 	</bean>
 	<bean id="/notice/detail" class = "com.newlecture.web.controller.notice.DetailController"></bean>
 	
