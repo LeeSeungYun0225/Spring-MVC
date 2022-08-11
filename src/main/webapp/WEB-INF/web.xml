@@ -7,10 +7,33 @@
   version="3.1"
   metadata-complete="true">
 
-<servlet>
 
+
+<!-- context xml 파일 위치 등 설정  -->
+
+
+<listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+
+<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+		/WEB-INF/spring/service-context.xml
+		/WEB-INF/spring/security-context.xml
+		</param-value>
+</context-param>
+<servlet>
 	<servlet-name>dispatcher</servlet-name>
 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<init-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/servlet-context.xml</param-value>
+	</init-param>
+	<!-- load-on-startup은 톰켓이 실행 될 때 로드하고자 함을 의미 -->
+	<load-on-startup>1</load-on-startup>
+	<!-- async-supported는 비동기적 로드를의미  -->
+	<async-supported>true</async-supported>
 </servlet>
 <servlet-mapping>
 	<servlet-name>dispatcher</servlet-name>
