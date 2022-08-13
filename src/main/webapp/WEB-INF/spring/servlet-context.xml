@@ -15,17 +15,6 @@
 <!--  	<context:annotation-config/>  -->
  	<context:component-scan base-package="com.newlecture.web.controller"/>
 <!-- id에는 url을 지정, class는 실제 호출될 클래스 -->
-<!--      <bean id="/index" class="com.newlecture.web.controller.IndexController">  </bean>  -->
-	
-	<bean id="/notice/list" class = "com.newlecture.web.controller.notice.ListController">
-	
-	
-<!--  		<property name="noticeService" ref = "noticeService"/>  -->
-			
-
-	</bean>
-	<bean id="/notice/detail" class = "com.newlecture.web.controller.notice.DetailController"></bean>
-	
 	
 	<!-- Tiles Resolver -->
 	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">

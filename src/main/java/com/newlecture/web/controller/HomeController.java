@@ -7,11 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
+@RequestMapping("/")
 public class HomeController  {
 	
 	
 	//url 매핑이 클래스가 아니라 메소드에 매핑됨 
-	@RequestMapping("/index")
+	@RequestMapping("index")
 	public String index()
 	{
 
@@ -19,7 +20,7 @@ public class HomeController  {
 	}
 	
 	
-	@RequestMapping("/help")
+	@RequestMapping("help")
 	public void help()
 	{
 		System.out.println("test Message");
