@@ -10,6 +10,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.newlecture.web.constants.Dbconstants;
 import com.newlecture.web.entity.Notice;
 import com.newlecture.web.entity.NoticeView;
@@ -20,7 +22,7 @@ import com.newlecture.web.service.NoticeService;
 // 인터페이스를 상속받아 구현하고 
 // 객체 사용 단에서는 인터페이스로 선언 , 생성하여 결합도를 낮춘다 .
 
-
+@Service
 public class JDBCNoticeService implements NoticeService {
 	
 	public JDBCNoticeService() {

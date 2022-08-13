@@ -11,8 +11,10 @@
         http://www.springframework.org/schema/context
         https://www.springframework.org/schema/context/spring-context.xsd">
 
-<!-- 어노테이션 사용을 위한 config -->
-	<context:annotation-config/>
+	<!-- 어노테이션 사용을 위한 config -->
+<!-- 	<context:annotation-config/> -->
+	<!-- 패키지 안에있는 모든 클래스를 뒤져 컴포넌트를 객체화해주기 위한 설정  -->
+	<context:component-scan base-package="com.newlecture.web.service"></context:component-scan>
 	
 		
 	<bean id="dbSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
@@ -32,7 +34,7 @@
 	
 
 	<!--  class  -->
-	<bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService"/>
+<!-- 	<bean id="noticeService" class="com.newlecture.web.service.jdbc.JDBCNoticeService"/> -->
 	
 
 
