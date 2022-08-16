@@ -42,6 +42,18 @@
 	<!-- 특정 주소에 대한 접근 허가 -->
 	<mvc:resources location="/static/" mapping="/**"></mvc:resources>
 	<!-- annotation-driven::url매핑을 수행  -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+	
+		<!-- 서블릿 controller에서 한글을 표현하기 위한 설정내용 -->
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 
 </beans>

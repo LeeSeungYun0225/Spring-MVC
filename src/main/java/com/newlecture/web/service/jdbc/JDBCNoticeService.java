@@ -316,6 +316,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 	
 		
 		try {
+			
 			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
@@ -352,6 +353,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 			 
 			 
+			 
 			 result.close();
 			 con.close();
 			 statement.close();
@@ -362,6 +364,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
 		
 		
@@ -385,6 +388,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 	
 		
 		try {
+			 System.out.println("jdbc Enter");
 			 Connection con = Dbconstants.datasource.getConnection();
 			 
 			 
@@ -417,7 +421,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 				 notice.setPubl(pub);
 				 list.add(notice);
 			 }
-			 
+			 System.out.println(list.toString()+ "list");
 			 
 			 
 			 result.close();
@@ -429,6 +433,7 @@ public List<Notice> getNoticePubList(String field/*title or writer_id*/,String q
 			 
 		} catch ( SQLException e) {
 			// TODO Auto-generated catch block
+			System.out.println(e);
 			e.printStackTrace();
 		}
 		
