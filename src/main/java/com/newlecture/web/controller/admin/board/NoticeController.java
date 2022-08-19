@@ -19,9 +19,15 @@ public class NoticeController {
 	
 	@RequestMapping("reg")
 	@ResponseBody
-	public String reg(String title,String content,String category)
+	//choicebox같은 동일한 name을 갖는 태그가 여러개일 경우 배열로 받아올 수 있음 
+	public String reg(String title,String content,String category,String check,String[] choicebox,String radiobox)
 	{
-		return "title :" + title + "\ncontent : "+ content + "\ncategory : " + category;
+		for(int i=0;i<choicebox.length;i++)
+		{
+			System.out.println("check BOX : " + choicebox[i]);
+		}
+		
+		return "title :" + title + " content : "+ content + " category : " + category + " radio : " + radiobox;
 	}
 	
 	@RequestMapping("edit")
