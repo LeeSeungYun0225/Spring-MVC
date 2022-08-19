@@ -22,8 +22,8 @@ public class NoticeController {
 	
 	@RequestMapping("list") // RequestParam("")은 쿼리스트링의 대상을 다르게 명명하여 사용할 수 있게 함 	
 	//다만 이 경우 쿼리스트링 p가 없을 경우 문제 발생 
-	//기본값을 설정해주면 된다.(스프링에서 지원하는 기능) 
-	public String list(@RequestParam(required = false,name="p") int page)//String p)//HttpServletRequest request)
+	//기본값을 설정해주거나 required를 false로 설정하면 된다.(스프링에서 지원하는 기능) 
+	public String list(@RequestParam(required = false,name="p") Integer page)//String p)//HttpServletRequest request)
 	{
 		//String p = request.getParameter("p");
 		System.out.println(page);
